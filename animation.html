@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: x hidden;
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            top: 10px;
+            left: 10px;
+            border-radius: 25px;
+            animation: moveandrotate 3s ease-in-out infinite alternate, colorchange 4s linear infinite alternate, fadebox 5s ease-in-out infinite alternate;
+        }
+        
+        @keyframes moveandrotate {
+            0% {
+                transform: translateX(50px) rotate(0deg);
+            }
+            50% {
+                transform: translateX(1400px) rotate(180deg);
+            }
+            100% {
+                transform: translateX(10px) rotate(0deg);
+            }
+        }
+        
+        @keyframes colorchange {
+            0% {
+                background-color: red;
+            }
+            50% {
+                background-color: blue;
+            }
+            100% {
+                background-color: red;
+            }
+        }
+        
+        @keyframes fadebox {
+            0% {
+                opacity: 0.2;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.1;
+            }
+        }
+        
+        marquee {
+            font-size: 20px;
+            color: rgb(68, 190, 201);
+            background-color: black;
+            padding: 10px;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">css animation example</h1>
+    <div class="box"></div>
+    <marquee behavior="scroll" direction="left">This text is scrolling using the &lt;marquee&gt;tag</marquee>
+</body>
+
+</html>
